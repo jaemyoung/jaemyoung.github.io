@@ -1,2 +1,131 @@
-<!doctype html><meta charset="utf-8"><title>OK</title>
-<h1>GitHub Pages OK</h1><p>최소 페이지 로드 성공.</p>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>이재명 | AI Engineer Resume</title>
+  <meta name="description" content="이재명 — AI Engineer 이력서와 프로젝트 포트폴리오" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    :root {
+      --bg: #fffdf9;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #111827;
+      --link: #2563eb;
+      --badge: #f3f4f6;
+      --chip: #eef2ff;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      font: 15px/1.6 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg); color: var(--ink);
+    }
+    .wrap { max-width: 980px; margin: 50px auto; padding: 0 20px; }
+    header { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+    .avatar { width: 88px; height: 88px; border-radius: 16px; overflow: hidden; background: #ddd; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .id h1 { font-size: 28px; margin: 0 0 4px; }
+    .id .role { color: var(--muted); font-weight: 600; }
+    .meta { margin-left: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+    .meta a { background: var(--badge); border-radius: 999px; padding: 8px 12px; color: var(--ink); border: 1px solid var(--line); }
+    h2 { font-size: 18px; margin: 26px 0 12px; }
+    section { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.04); }
+    ul { padding-left: 18px; margin-top: 6px; }
+    li { margin-bottom: 6px; }
+    .muted { color: var(--muted); }
+    footer { margin: 40px 0; text-align: center; color: var(--muted); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="avatar"><img src="https://avatars.githubusercontent.com/u/jaemyoung?v=4" alt="avatar"></div>
+    <div class="id">
+      <h1>이재명</h1>
+      <div class="role">AI Engineer · Backend · LLM Researcher</div>
+      <div class="muted">Seoul, KR · jaemyoung.dev@gmail.com</div>
+    </div>
+    <nav class="meta">
+      <a href="https://github.com/jaemyoung">GitHub</a>
+      <a href="https://www.linkedin.com/in/jaemyoung/">LinkedIn</a>
+      <a href="mailto:jaemyoung.dev@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>요약</h2>
+    <p>비대면 과외 데이터와 수능 문제 데이터를 분석해, STT·LLM 기반 학습 분석 시스템을 구축하고 있습니다. WhisperX 파이프라인, LangChain/TRL 파인튜닝, AWS EKS 인프라를 통해 학습 효율화 및 AI 서비스 프로덕션을 담당합니다.</p>
+  </section>
+
+  <section>
+    <h2>프로젝트 · Projects</h2>
+
+    <h3>1️⃣ 문제풀이 Chatbot 개발 (2025.10~ | ONUII)</h3>
+    <ul>
+      <li><strong>수능(교육) 도메인 특화 RAG 기반 질의응답 챗봇</strong> 설계 및 프로토타입 구현</li>
+      <li>자연어 질의를 <strong>의미 검색 + 메타데이터 필터</strong>로 분해하여 문제/해설 회수</li>
+      <li>메타 스키마(year, subject, score, keywords, difficulty) 설계 및 인덱싱</li>
+      <li>LangChain SelfQueryRetriever, Tool Use 패턴 기반 DB 라우팅 구현</li>
+    </ul>
+
+    <h3>2️⃣ AI 수업 리포트 개발 (2025.06~2025.10 | ONUII)</h3>
+    <ul>
+      <li><strong>비대면 수업 로그·음성 데이터를 기반</strong>으로 한 정량적 수업 지표 대시보드 구축</li>
+      <li>질문 탐지·수업 요약·질문 검색 기능을 통합한 AI 수업 리포트 서비스 설계</li>
+      <li>LangChain + LangSmith 기반 LLM 분석 파이프라인 및 <strong>AWS EKS 운영</strong></li>
+      <li>Beta 서비스 300명 운영, <strong>90% 이상 만족도</strong> 달성</li>
+    </ul>
+
+    <h3>3️⃣ 과외 수업 데이터 기반 한국어 LLM 개발 (2025.04~2025.06 | ONUII)</h3>
+    <ul>
+      <li>과외 대화 기반 <strong>LoRA/QLoRA 파인튜닝</strong>으로 질문 탐지 정확도 7~12% 향상</li>
+      <li>교사·학생 구분 special token 추가로 문맥형 Pretraining 수행</li>
+      <li>RunPod Serverless로 배포, inference 비용 20% 절감</li>
+      <li><a href="https://huggingface.co/Onuii">HuggingFace Onuii 공식 페이지</a></li>
+    </ul>
+
+    <h3>4️⃣ 수업 점수 지표 개발 (2025.02~2025.06 | ONUII)</h3>
+    <ul>
+      <li>비대면 과외 수업 로그(STT 토큰·발화 길이·질문 플래그)를 분석하여 <strong>‘수업 점수(0~100)’</strong> 산출</li>
+      <li>사분위 기반 <strong>누진 점수표</strong>로 EMA 성장률 반영 KPI 지표화</li>
+      <li>FastAPI `/score` API로 배포, MongoDB Change Stream을 통한 자동 감지</li>
+    </ul>
+
+    <h3>5️⃣ 비대면 과외 수업 STT 프레임워크 (2024.07~2024.12 | ONUII)</h3>
+    <ul>
+      <li>하루 3,000건 수업 음성을 <strong>WhisperX + VAD + Alignment</strong> 기반 STT로 처리</li>
+      <li>Pod 단위 병렬처리로 외부 API 대비 <strong>처리시간 5배 단축 / 비용 80~90% 절감</strong></li>
+      <li>Celery 기반 비동기 처리 파이프라인 및 Streamlit Admin 대시보드 구성</li>
+      <li><a href="https://github.com/jaemyoung/portfolio_images/blob/main/STT%20pipeline%20with%20streamlit%20admin%20dashboard.png?raw=true">전체 파이프라인 아키텍처 보기</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>스킬셋 · Skills</h2>
+    <ul>
+      <li><strong>AI/ML</strong>: Python, LangChain, HuggingFace TRL, vLLM, WhisperX</li>
+      <li><strong>Backend</strong>: FastAPI, Celery, MongoDB, S3, Redis, GraphQL</li>
+      <li><strong>Infra</strong>: AWS EKS, Karpenter, Prometheus, Grafana, RunPod</li>
+      <li><strong>Frontend</strong>: React, Vercel, TailwindCSS</li>
+      <li><strong>DevOps</strong>: GitHub Actions, Docker, Terraform</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>학력</h2>
+    <p>OO대학교 컴퓨터공학과 졸업 (2015~2019)</p>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Jaemyoung — 마지막 업데이트: <span id="d"></span>
+  </footer>
+</div>
+<script>
+  const now=new Date();
+  document.getElementById('y').textContent=now.getFullYear();
+  document.getElementById('d').textContent=now.toISOString().slice(0,10);
+</script>
+</body>
+</html>
