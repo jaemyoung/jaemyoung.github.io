@@ -8,15 +8,21 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌙</text></svg>">
   <style>
     :root {
-      --bg: #0b0f14;         /* 아주 짙은 남청색 배경 */
-      --ink: #e5e7eb;        /* 본문 텍스트 (밝은 회백) */
-      --muted: #9aa4b2;      /* 설명 텍스트 */
-      --line: #1f2937;       /* 경계선 */
-      --link: #93c5fd;       /* 링크 색 */
-      --badge: #111827;      /* 배지 배경 */
-      --chip: #0f172a;       /* 칩 배경 */
+      --bg: #0b0f14;
+      --ink: #e5e7eb;
+      --muted: #9aa4b2;
+      --line: #1f2937;
+      --link: #93c5fd;
+      --badge: #111827;
+      --chip: #0f172a;
     }
-    html, body { margin: 0; padding: 0; font: 15px/1.7 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font: 15px/1.7 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap { max-width: 980px; margin: 48px auto; padding: 0 20px; }
@@ -25,20 +31,16 @@
     .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .id h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: .2px; }
     .id .role { color: var(--muted); font-weight: 600; }
-    .meta { margin-left: auto; display: flex; flex-wrap: wrap; gap: 10px; }
-    .meta a { background: var(--badge); border-radius: 999px; padding: 8px 12px; color: var(--ink); border: 1px solid var(--line); }
     h2 { font-size: 18px; margin: 26px 0 12px; }
     section { background: rgba(255,255,255,.02); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
     ul { padding-left: 18px; margin-top: 6px; }
-    li { margin-bottom: 6px; }
-    .muted { color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .muted { color: var(--muted); font-size: 14px; }
     .two-col { display: grid; grid-template-columns: 280px 1fr; gap: 22px; }
     @media (max-width: 860px){ .two-col { grid-template-columns: 1fr; } }
-    footer { margin: 34px 0; text-align: center; color: var(--muted); }
-    /* 프린트 시도: 어두운 배경 유지 but 잉크 절약 모드 옵션 */
+    footer { margin: 34px 0; text-align: center; color: var(--muted); font-size: 14px; }
     @media print {
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .meta { display: none; }
     }
   </style>
 </head>
@@ -51,11 +53,6 @@
       <div class="role">AI Engineer · Backend · LLM</div>
       <div class="muted">Seoul, KR · jaemyoung.dev@gmail.com</div>
     </div>
-    <nav class="meta">
-      <a href="https://github.com/jaemyoung">GitHub</a>
-      <a href="https://www.linkedin.com/in/jaemyoung/">LinkedIn</a>
-      <a href="mailto:jaemyoung.dev@gmail.com">Email</a>
-    </nav>
   </header>
 
   <section>
@@ -76,11 +73,6 @@
         <li><strong>STT</strong>: WhisperX+VAD+Alignment, 대규모 배치 처리</li>
         <li><strong>백엔드/인프라</strong>: FastAPI, Celery, MongoDB, AWS EKS, Karpenter, Prometheus</li>
       </ul>
-      <h2>링크</h2>
-      <ul>
-        <li><a href="https://huggingface.co/Onuii">HuggingFace · Onuii</a></li>
-        <li><a href="https://github.com/jaemyoung">GitHub · @jaemyoung</a></li>
-      </ul>
     </div>
     <div>
       <h2>지원 동기</h2>
@@ -99,7 +91,7 @@
       <li><strong>문제풀이 Chatbot(RAG)</strong>: 메타데이터(year/subject/score/difficulty…) 설계 및 Self-Query Retriever로 고정밀 회수 → 근거 기반 설명 응답.
       과목 라우팅·도메인 가드레일·Tool Use 패턴 적용.</li>
       <li><strong>AI 수업 리포트</strong>: 발화·질문·성장 지표를 통합한 점수화 대시보드 구현, Beta 300명, 만족도 90%+</li>
-      <li><strong>한국어 LLM 튜닝</strong>: 수업 로그 기반 LoRA/QLoRA → F1/Acc 7~12% 개선, RunPod Serverless 배포로 비용 20% 절감</li>
+      <li><strong>한국어 LLM 튜닝</strong>: 수업 로그 기반 LoRA/QLoRA → F1/Acc 7~12% 개선, RunPod Serverless + vLLM 배포로 비용 20% 절감</li>
       <li><strong>STT 프레임워크</strong>: WhisperX 파이프라인을 EKS로 운영, 처리시간 5배 단축·비용 80~90% 절감</li>
     </ul>
   </section>
@@ -110,6 +102,68 @@
       <li><strong>엔드투엔드</strong>로 아이디어→데이터→모델→API→프론트→모니터링까지 제품화</li>
       <li>실사용 로그 기반 <strong>지속적 평가지표</strong>와 <strong>관측 체계</strong>로 성능/비용 최적화</li>
       <li>수업/학습 도메인 문제를 <strong>데이터 모델링</strong>으로 명확히 정의하고 개선 사이클 구축</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>연구이력 · Research History</h2>
+    <ul>
+      <li>
+        <strong>[특허]</strong> 사전 학습된 언어 모델을 이용하여 문제에 대한 지식 요소를 자동으로 태그하는 방법 및 장치  
+        <span class="muted">2024.04 | 국내 특허 출원 (출원번호 10-2024-0044535)</span>
+        <p>사전 학습된 언어 모델을 활용하여 학습 문제의 핵심 지식 요소(Knowledge Component, KC)를 자동 식별·태깅하는 기술로, 
+        교사의 검토 부담을 줄이고 학생에게 객관적 학습 평가 데이터를 제공. 
+        정규 교육과정을 기반으로 문제 핵심을 자동 분석해 맞춤형 학습을 지원.</p>
+      </li>
+      <li>
+        <strong>[해외논문]</strong> Navigating the AI Technology Landscape from GitHub Data  
+        <span class="muted">2026.03(출판 예정) | Technology in Society (SSCI Q1, Accepted)</span><br>
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X25002805" target="_blank">논문 링크</a>
+        <p>GitHub 데이터를 기반으로 AI 기술 환경을 탐색하고 예측하는 연구. 
+        특허 중심 기술 맵핑의 한계를 보완하고, 오픈소스 생태계의 라이브러리 커플링 지표를 통해 
+        기술적 상호 연관성과 발전 방향을 제시.</p>
+      </li>
+      <li>
+        <strong>[국내논문]</strong> Functional and Safety Considerations in Patient Clothes During Pandemic  
+        <span class="muted">2023.12 | The Research Journal of the Costume Culture (KCI)</span><br>
+        <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003134727" target="_blank">논문 링크</a>
+        <p>2011~2021년 블로그·뉴스 데이터를 기반으로 감염병이 환자복 디자인 인식에 미친 영향을 
+        네트워크 분석과 LDA 토픽 모델링으로 분석. 
+        COVID-19 이후 위생·안전 키워드의 급증을 통해 환자복의 의료 장비화 경향을 제시.</p>
+      </li>
+      <li>
+        <strong>[국내논문]</strong> 특허 토픽 기반 메타버스 기술 프레임워크: 가상 세계를 중심으로  
+        <span class="muted">2023.12 | 대한산업공학회 (KCI)</span><br>
+        <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003023514" target="_blank">논문 링크</a>
+        <p>미국 특허청 데이터를 활용하여 메타버스 분야의 20개 기술 토픽을 LDA로 도출. 
+        주요 글로벌 IT 기업의 기술 역량을 토픽 비중 기반으로 정량 분석하여 
+        메타버스 기술 프레임워크를 제시.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>외부활동 · External Activities</h2>
+    <ul>
+      <li>
+        <strong>인공지능사관학교 팀 프로젝트 멘토</strong>  
+        <span class="muted">2024.06 ~ 2024.08 | 광주인공지능사관학교</span>
+        <p>인공지능 활용 프로젝트 2개 팀 멘토링 수행.<br>
+        - 제주 게스트하우스 추천 시스템 → 장려상 수상<br>
+        - 텍스트 기반 감정 예측 시스템 → 최우수상 수상</p>
+      </li>
+      <li>
+        <strong>K-Startup & OpenAI Matching Day</strong>  
+        <span class="muted">2023.12 | 중소기업벤처부 & OpenAI</span>
+        <p>“Tutoring Session Summary Notes with OpenAI APIs” 주제로 참가, 
+        서면 평가 및 예선 발표를 통해 OpenAI $2000 Credit 수상.<br>
+        <a href="https://www.aitimes.kr/news/articleView.html?idxno=29729" target="_blank">관련 기사 보기</a></p>
+      </li>
+      <li>
+        <strong>SEOULTECH 데이터 비즈니스 네트워킹 데이</strong>  
+        <span class="muted">2023.11 | 서울과학기술대학교</span>
+        <p>ONUII 대표 서비스 “설탭”을 소개하고, 학습 이력 데이터를 활용한 AI 분석 사례 발표.</p>
+      </li>
     </ul>
   </section>
 
